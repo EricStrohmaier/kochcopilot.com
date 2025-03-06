@@ -6,6 +6,8 @@ import { emailCapture, colors } from "../config/siteConfig";
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   // Create styles using colors from config
   const styles = useMemo(
@@ -23,26 +25,52 @@ export default function EmailCapture() {
     []
   );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      // Submit email to the API route that will add it to Notion
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to subscribe");
+      }
+
+      // Success! Show the success message
+      setSubmitted(true);
+    } catch (err) {
+      console.error("Error submitting email:", err);
+      setError(
+        typeof err === "object" && err !== null && "message" in err
+          ? (err as Error).message
+          : "Failed to subscribe. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="notify" className="mb-16 overflow-hidden rounded-xl shadow-lg">
       {/* Header Banner */}
-      <div
-        className="bg-gradient-to-r from-[#1A3A3A] to-[#2F4238] text-white py-9 px-8 border-b border-[#1C1C1C]"
-      >
+      <div className="bg-gradient-to-r from-[#1A3A3A] to-[#2F4238] text-white py-9 px-8 border-b border-[#1C1C1C]">
         <h2 className="text-3xl font-bold mb-2 text-center tracking-tight text-white">
           {emailCapture.title}
         </h2>
       </div>
 
       {/* Main cta Area */}
-      <div
-        className="bg-[#F5F1E6] shadow-sm rounded-b-xl overflow-hidden"
-      >
+      <div className="bg-[#F5F1E6] shadow-sm rounded-b-xl overflow-hidden">
         <div className="md:flex">
           {/* Left Side - Image */}
           <div className="md:w-1/2 relative hidden md:block">
@@ -86,11 +114,17 @@ export default function EmailCapture() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className={`w-full ${styles.buttonBg} text-white px-8 py-3.5 rounded-full text-lg font-semibold ${styles.buttonHover} transition-all shadow-md flex items-center justify-center hover:translate-y-[-2px]`}
+                  disabled={isSubmitting}
+                  className={`w-full ${styles.buttonBg} text-white px-8 py-3.5 rounded-full text-lg font-semibold ${styles.buttonHover} transition-all shadow-md flex items-center justify-center hover:translate-y-[-2px] disabled:opacity-70 disabled:cursor-not-allowed`}
                 >
-                  {emailCapture.ctaText}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  {isSubmitting ? "Submitting..." : emailCapture.ctaText}
+                  {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
                 </button>
+                {error && (
+                  <p className="text-red-500 text-sm mt-2 text-center">
+                    {error}
+                  </p>
+                )}
                 <p className="text-xs text-gray-500 text-center mt-4">
                   {emailCapture.stats}
                 </p>
