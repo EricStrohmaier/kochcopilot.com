@@ -8,6 +8,16 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "*.{js,ts,jsx,tsx,mdx}"
   ],
+  safelist: [
+    // Add specific color classes from your siteConfig
+    'bg-[#2F4238]', 'bg-[#1A3A3A]', 'bg-[#C76F41]', 'bg-[#1C1C1C]', 'bg-[#F5F1E6]', 'bg-[#EAD8C0]',
+    'text-[#2F4238]', 'text-[#1A3A3A]', 'text-[#C76F41]', 'text-[#1C1C1C]', 'text-[#F5F1E6]', 'text-[#EAD8C0]',
+    'border-[#2F4238]', 'border-[#1A3A3A]', 'border-[#C76F41]', 'border-[#1C1C1C]', 'border-[#F5F1E6]', 'border-[#EAD8C0]',
+    // Also include opacity variants
+    'bg-[#2F4238]/10', 'bg-[#2F4238]/20', 'bg-[#C76F41]/20', 'border-[#2F4238]/20', 'border-[#C76F41]/20',
+    // Include focus and hover states
+    'focus:border-[#2F4238]', 'focus:ring-[#2F4238]/20', 'hover:bg-[#1A3A3A]'
+  ],
   theme: {
   	extend: {
   		colors: {
