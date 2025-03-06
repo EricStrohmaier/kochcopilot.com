@@ -1,11 +1,27 @@
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { ArrowRight } from "lucide-react";
 import { emailCapture, colors } from "../config/siteConfig";
 
 export default function EmailCapture() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  // Create styles using colors from config
+  const styles = useMemo(
+    () => ({
+      headerBg: `bg-gradient-to-r from-[${colors.dark}] to-[${colors.primary}]`,
+      headerBorder: `border-[${colors.black}]`,
+      mainBg: `bg-[${colors.light}]`,
+      highlightText: `text-[${colors.accent}]`,
+      inputFocus: `focus:border-[${colors.primary}] focus:ring-[${colors.primary}]/20`,
+      buttonBg: `bg-[${colors.primary}]`,
+      buttonHover: `hover:bg-[${colors.dark}]`,
+      successIconBg: `bg-[${colors.accent}]/20`,
+      successIconColor: `text-[${colors.accent}]`,
+    }),
+    []
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,14 +31,18 @@ export default function EmailCapture() {
   return (
     <section id="notify" className="mb-16 overflow-hidden rounded-xl shadow-lg">
       {/* Header Banner */}
-      <div className={`bg-gradient-to-r from-[${colors.dark}] to-[${colors.primary}] text-white py-9 px-8 border-b border-[${colors.black}]`}>
+      <div
+        className={`${styles.headerBg} text-white py-9 px-8 border-b ${styles.headerBorder}`}
+      >
         <h2 className="text-3xl font-bold mb-2 text-center tracking-tight text-white">
           {emailCapture.title}
         </h2>
       </div>
 
       {/* Main cta Area */}
-      <div className={`bg-[${colors.light}] shadow-sm rounded-b-xl overflow-hidden`}>
+      <div
+        className={`${styles.mainBg} shadow-sm rounded-b-xl overflow-hidden`}
+      >
         <div className="md:flex">
           {/* Left Side - Image */}
           <div className="md:w-1/2 relative hidden md:block">
@@ -47,16 +67,16 @@ export default function EmailCapture() {
                     {emailCapture.heading}
                   </h3>
                   <p className="text-gray-600 mb-7 leading-relaxed">
-                    {emailCapture.description.split("exclusive 10% discount")[0]}
-                    <span className={`font-semibold text-[${colors.accent}]`}>
-                      exclusive 10% discount
+                    {emailCapture.description.before}
+                    <span className={`font-semibold ${styles.highlightText}`}>
+                      {emailCapture.description.highlight}
                     </span>
-                    {emailCapture.description.split("exclusive 10% discount")[1]}
+                    {emailCapture.description.after}
                   </p>
                   <input
                     type="email"
                     placeholder={emailCapture.placeholder}
-                    className={`w-full px-4 py-4 border-2 border-gray-300 rounded-lg focus:border-[${colors.primary}] focus:ring-2 focus:ring-[${colors.primary}]/20 outline-none transition-all text-base shadow-sm`}
+                    className={`w-full px-4 py-4 border-2 border-gray-300 rounded-lg ${styles.inputFocus} focus:ring-2 outline-none transition-all text-base shadow-sm`}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
@@ -66,7 +86,7 @@ export default function EmailCapture() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className={`w-full bg-[${colors.primary}] text-white px-8 py-3.5 rounded-full text-lg font-semibold hover:bg-[${colors.dark}] transition-all shadow-md flex items-center justify-center hover:translate-y-[-2px]`}
+                  className={`w-full ${styles.buttonBg} text-white px-8 py-3.5 rounded-full text-lg font-semibold ${styles.buttonHover} transition-all shadow-md flex items-center justify-center hover:translate-y-[-2px]`}
                 >
                   {emailCapture.ctaText}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -77,10 +97,12 @@ export default function EmailCapture() {
               </form>
             ) : (
               <div className="py-12">
-                <div className={`w-16 h-16 bg-[${colors.accent}]/20 rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm`}>
+                <div
+                  className={`w-16 h-16 ${styles.successIconBg} rounded-full flex items-center justify-center mx-auto mb-6 shadow-sm`}
+                >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className={`h-10 w-10 text-[${colors.accent}]`}
+                    className={`h-10 w-10 ${styles.successIconColor}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

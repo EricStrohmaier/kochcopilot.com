@@ -59,9 +59,12 @@ export const productFeatures = {
 // Email Capture Section
 export const emailCapture = {
   title: "Join the Waitlist – Get 10% Off",
-  heading: "Join the Waitlist",
-  description:
-    "Be the first to grab a Lazy Surf Sock before they sell out! Get exclusive early access & a 10% discount when we launch near you.",
+  heading: "",
+  description: {
+    before: "Be the first to grab a Lazy Surf Sock before they sell out! Get exclusive early access & ",
+    highlight: "exclusive 10% discount",
+    after: " when we launch near you."
+  },
   ctaText: "Sign Up & Get 10% Off",
   successHeading: "You're in!",
   successMessage:
