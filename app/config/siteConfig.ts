@@ -16,6 +16,14 @@ export const colors = {
   },
 };
 
+export const keywords = [
+  "surf",
+  "surf sock",
+  "board protection",
+  "surf gear",
+  "lazy surf",
+];
+
 // Company Information
 export const company = {
   name: "Lazy Surf",
@@ -61,9 +69,10 @@ export const emailCapture = {
   title: "Join the Waitlist – Get 10% Off",
   heading: "",
   description: {
-    before: "Be the first to grab a Lazy Surf Sock before they sell out! Get exclusive early access & ",
+    before:
+      "Be the first to grab a Lazy Surf Sock before they sell out! Get exclusive early access & ",
     highlight: "exclusive 10% discount",
-    after: " when we launch near you."
+    after: " when we launch near you.",
   },
   ctaText: "Sign Up & Get 10% Off",
   successHeading: "You're in!",
