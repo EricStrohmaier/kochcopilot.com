@@ -32,7 +32,7 @@ export default function EmailCapture() {
     <section id="notify" className="mb-16 overflow-hidden rounded-xl shadow-lg">
       {/* Header Banner */}
       <div
-        className={`${styles.headerBg} text-white py-9 px-8 border-b ${styles.headerBorder}`}
+        className="bg-gradient-to-r from-[#1A3A3A] to-[#2F4238] text-white py-9 px-8 border-b border-[#1C1C1C]"
       >
         <h2 className="text-3xl font-bold mb-2 text-center tracking-tight text-white">
           {emailCapture.title}
@@ -41,7 +41,7 @@ export default function EmailCapture() {
 
       {/* Main cta Area */}
       <div
-        className={`${styles.mainBg} shadow-sm rounded-b-xl overflow-hidden`}
+        className="bg-[#F5F1E6] shadow-sm rounded-b-xl overflow-hidden"
       >
         <div className="md:flex">
           {/* Left Side - Image */}
