@@ -1,4 +1,4 @@
-// Site configuration file for Lazy Surf Socks
+// Site configuration file for KochCopilot
 
 // Color Palette
 export const colors = {
@@ -7,153 +7,134 @@ export const colors = {
   dark: "#1A3A3A", // Dark Charcoal/Navy
   black: "#1C1C1C", // Charcoal
   light: "#F5F1E6", // Warm Sand Beige
-  lightAlt: "#EAD8C0", // Slightly darker sand
-  white: "#FFFFFF", // White for contrast
+  lightAlt: "#EAD8C0", // Slightly dunkler Sandton
+  white: "#FFFFFF", // Weiß für Kontraste
   text: {
     dark: "#1C1C1C",
     light: "#F5F1E6",
-    muted: "#6B7280", // Gray for less important text
+    muted: "#6B7280", // Grauton für weniger wichtige Texte
   },
 };
 
 export const keywords = [
-  "surf",
-  "surf sock",
-  "board protection",
-  "surf gear",
-  "lazy surf",
+  "Rezepte",
+  "Koch-App",
+  "Kochen leicht gemacht",
+  "Traditionelle deutsche Küche",
+  "Smart Cooking",
+  "Kühlschrank Zutaten Rezepte",
 ];
 
-// Company Information
+// Unternehmensinformationen
 export const company = {
-  name: "Lazy Surf",
-  fullName: "Lazy Surf Socks",
-  email: "hello@lazysurf.com",
+  name: "KochCopilot",
+  fullName: "KochCopilot – Deine smarte Küchenhilfe",
+  email: "support@kochcopilot.com",
   foundingYear: 2024,
-  copyright: `© ${new Date().getFullYear()} Lazy Surf. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} KochCopilot. Alle Rechte vorbehalten.`,
   socialLinks: [
-    { name: "Instagram", url: "#" },
-    { name: "Facebook", url: "#" },
-    { name: "Twitter", url: "#" },
+    { name: "", url: "" },
   ],
   legalLinks: [
-    { name: "Privacy Policy", url: "#" },
-    { name: "Terms of Service", url: "#" },
+    { name: "Datenschutz", url: "/datenschutz" },
+    { name: "AGB", url: "/agb" },
   ],
 };
 
-// Hero Section
+// Hero-Section
 export const hero = {
-  title: "Lazy Surf Socks – The Easiest Way to Protect Your Board",
+  title: "Die richtige Rezeptidee – genau dann, wenn du sie brauchst",
   description:
-    "Say goodbye to waxy car seats and sun-damaged boards! Lazy Surf Socks slip on in seconds, protecting your board from heat, UV rays, and dings while keeping your car clean.",
-  ctaText: "Join the Waitlist & Get 10% Off",
-  image: "/425755979_373115395446132_1060713950576099027_n.jpg",
+    "Du hast Zutaten, aber keine Idee? Unsere App schlägt dir das perfekte Rezept vor – basierend auf deinen Vorräten und echten Geheimtipps aus der traditionellen Küche.",
+  ctaText: "Jetzt ausprobieren",
+  image: "/kochcopilot-hero.jpg",
 };
 
-// Product Features Section
+// Produktfeatures
 export const productFeatures = {
-  title: "Why Lazy Surf Socks?",
+  title: "Warum KochCopilot?",
   features: [
-    "Shields your board from UV rays & heat 🔥",
-    "Stretch-fit design – No more struggling with stiff covers",
-    "Keeps wax off your car seats & gear 🚗",
-    "Super lightweight & compact for easy travel",
-    "Available in multiple sizes for a perfect fit",
+    "🔎 Gibt Rezeptvorschläge basierend auf deinen Zutaten",
+    "📖 Kombiniert traditionelle Rezepte mit smarten Empfehlungen",
+    "🚀 Spart Zeit – kein langes Suchen oder Grübeln mehr",
+    "👵 Exklusive Oma-Geheimtipps für authentischen Geschmack",
+    "📱 Einfach zu bedienen – perfekte Rezepte mit nur wenigen Klicks",
   ],
-  videoSrc: "/lazy-surf-demo.mp4",
+  videoSrc: "/kochcopilot-demo.mp4",
 };
 
-// Email Capture Section
-export const emailCapture = {
-  title: "Join the Waitlist – Get 10% Off",
-  heading: "",
-  description: {
-    before:
-      "Be the first to grab a Lazy Surf Sock before they sell out! Get exclusive early access & ",
-    highlight: "exclusive 10% discount",
-    after: " when we launch near you.",
-  },
-  ctaText: "Sign Up & Get 10% Off",
-  successHeading: "You're in!",
-  successMessage:
-    "We'll email you when Lazy Surf Socks launch in your area. No spam, just surf essentials.",
-  placeholder: "Enter your email address",
-  image: "/426060699_1082809579424536_6285010735065195148_n.jpg",
-  stats: "Join 500+ surfers already on the waiting list",
-};
-
-// FAQ Section
+// FAQ-Bereich
 export const faqs = {
-  title: "Frequently Asked Questions",
+  title: "Häufig gestellte Fragen",
   questions: [
     {
-      question: "What is the Lazy Surf Sock?",
+      question: "Wie funktioniert die App?",
       answer:
-        "It's a stretchy, lightweight surfboard sock designed to protect your board from sun damage, heat, and wax mess in your car. Unlike stiff board covers, it slips on effortlessly.",
+        "Gib einfach ein, welche Zutaten du zu Hause hast – die App schlägt dir passende Rezepte vor. Zusätzlich kannst du Vorlieben und Ernährungsgewohnheiten anpassen, damit die Vorschläge genau zu dir passen.",
     },
     {
-      question: "What sizes are available?",
-      answer: {
-        text: "We offer four sizes to fit shortboards, mid-lengths, and longboards:",
-        list: [
-          "Small: 5'8\" - 6'2\"",
-          "Medium: 6'3\" - 7'0\"",
-          "Large: 7'1\" - 8'0\"",
-          "X-Large: 8'1\" - 9'6\"",
-        ],
-        conclusion:
-          "If you're between sizes, go for the larger one for a better fit!",
-      },
+      question: "Sind die Rezepte wirklich von Oma?",
+      answer:
+        "Ja! Wir haben traditionelle deutsche Rezepte gesammelt, modernisiert und mit **echten Geheimtipps** ergänzt, die man sonst nur von Oma kennt.",
     },
     {
-      question: "Will it fit my board?",
+      question: "Ist die App kostenlos?",
       answer:
-        "The sock is designed to be stretchy and snug for a secure fit. Check our size guide to find your perfect match!",
-    },
-    {
-      question: "When will Lazy Surf Socks be available?",
-      answer:
-        "We're launching in select surf spots starting June 2024. Sign up to get notified first!",
-    },
-    {
-      question: "How do I care for my Lazy Surf Sock?",
-      answer:
-        "The Lazy Surf Sock is machine washable in cold water. We recommend washing on a gentle cycle and hanging to dry. Do not iron or use bleach. Rinse with fresh water after use in salt water to prolong the life of your sock.",
+        "Du kannst die Basisfunktionen kostenlos nutzen. Für zusätzliche Features wie personalisierte Vorschläge, exklusive Rezepte und detaillierte Anleitungen gibt es eine optionale Premium-Version.",
     },
   ],
 };
 
-// Testimonials Section
+// Testimonials
 export const testimonials = {
-  title: "What Surfers Are Saying",
+  title: "Was unsere Nutzer sagen",
   items: [
     {
       quote:
-        "Finally, a surf sock that's easy to use! No more struggling to put it on.",
-      name: "Alex R.",
-      title: "Professional Surfer",
-      image: "/471399929_623382030026228_1411957194752309130_n.jpg",
+        "Endlich nutze ich meine Kochbücher wieder – aber digital!",
+      name: "Lisa, 38, Berlin",
+      title: "Hobbyköchin",
+      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256&h=256&fit=crop",
     },
     {
-      quote: "Keeps my board cool and my car clean. Total game changer!",
-      name: "Sarah M.",
-      title: "Surf Instructor",
-      image: "/471506815_1282322243216161_7265080810814573711_n.jpg",
+      quote: "Perfekt für den Alltag! Kein Rätselraten mehr, was ich kochen soll.",
+      name: "Tobias, 42, Hamburg",
+      title: "Berufstätiger Vater",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=256&h=256&fit=crop",
     },
     {
-      quote: "Best surf sock I've ever owned—light, stretchy, and protective.",
-      name: "Jason W.",
-      title: "Weekend Warrior",
-      image: "/471547419_1264495837990213_1465657528673896189_n.jpg",
+      quote:
+        "Kochen wie früher – aber smarter.",
+      name: "Sarah, 29, München",
+      title: "Foodie",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=256&h=256&fit=crop",
     },
   ],
 };
 
-// Final CTA Section
+// Letzte Call-to-Action Sektion
 export const finalCta = {
-  title: "Protect Your Board, Save 10% – Join the Waitlist!",
+  title: "Nie wieder ratlos vor dem Kühlschrank stehen!",
   description:
-    "The easiest, lightest, and most effective surf sock is almost here. Don't miss out—sign up now for exclusive early access & a 10% discount!",
-  ctaText: "Sign Up & Get 10% Off",
+    "Sag der App, was du zu Hause hast – und koche sofort los mit perfekt passenden Rezepten. Jetzt kostenlos testen!",
+  ctaText: "Jetzt ausprobieren",
 };
+
+// Email Capture
+// Email Capture Section
+export const emailCapture = {
+  title: "Werde Beta-Tester!",
+  heading: "KI-Revolution in deiner Küche",
+  description: {
+    before: "Sei einer der Ersten, die ",
+    highlight: "KI-gestützte Rezeptvorschläge",
+    after: " testen und mitgestalten können.",
+  },
+  placeholder: "Deine E-Mail-Adresse",
+  ctaText: "Beta-Zugang sichern",
+  stats: "Limitierte Plätze für Beta-Tester verfügbar",
+  successHeading: "Perfekt - du bist dabei!",
+  successMessage: "Du erhältst als eine(r) der Ersten Zugang zu unserer KI-Koch-Innovation.",
+  image: "/email-capture-kitchen.jpg",
+};
+

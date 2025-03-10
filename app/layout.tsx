@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   creator: company.fullName,
   publisher: company.fullName,
   keywords: keywords,
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
     type: "website",
