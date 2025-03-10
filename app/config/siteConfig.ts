@@ -28,6 +28,7 @@ export const keywords = [
 // Unternehmensinformationen
 export const company = {
   name: "KochCopilot",
+  url: "https://kochcopilot.com",
   fullName: "KochCopilot – Deine smarte Küchenhilfe",
   email: "support@kochcopilot.com",
   foundingYear: 2024,
@@ -47,18 +48,18 @@ export const hero = {
   description:
     "Du hast Zutaten, aber keine Idee? Unsere App schlägt dir das perfekte Rezept vor – basierend auf deinen Vorräten und echten Geheimtipps aus der traditionellen Küche.",
   ctaText: "Jetzt ausprobieren",
-  image: "/kochcopilot-hero.jpg",
+  image: "/hero.png",
 };
 
 // Produktfeatures
 export const productFeatures = {
   title: "Warum KochCopilot?",
   features: [
-    "🔎 Gibt Rezeptvorschläge basierend auf deinen Zutaten",
-    "📖 Kombiniert traditionelle Rezepte mit smarten Empfehlungen",
-    "🚀 Spart Zeit – kein langes Suchen oder Grübeln mehr",
-    "👵 Exklusive Oma-Geheimtipps für authentischen Geschmack",
-    "📱 Einfach zu bedienen – perfekte Rezepte mit nur wenigen Klicks",
+    "Gibt Rezeptvorschläge basierend auf deinen Zutaten",
+    "Kombiniert traditionelle Rezepte mit smarten Empfehlungen",
+    "Spart Zeit – kein langes Suchen oder Grübeln mehr",
+    "Exklusive Oma-Geheimtipps für authentischen Geschmack",
+    "Einfach zu bedienen – perfekte Rezepte mit nur wenigen Klicks",
   ],
   videoSrc: "/kochcopilot-demo.mp4",
 };
@@ -123,18 +124,18 @@ export const finalCta = {
 // Email Capture
 // Email Capture Section
 export const emailCapture = {
-  title: "Werde Beta-Tester!",
-  heading: "KI-Revolution in deiner Küche",
+  title: "Sei von Anfang an dabei!",
+  heading: "Wir starten bald!",
   description: {
-    before: "Sei einer der Ersten, die ",
-    highlight: "KI-gestützte Rezeptvorschläge",
-    after: " testen und mitgestalten können.",
+    before: "Wir arbeiten noch fleißig an der App, aber ",
+    highlight: "du kannst dich jetzt schon anmelden",
+    after: " und wirst als Erste(r) informiert, wenn es losgeht!",
   },
   placeholder: "Deine E-Mail-Adresse",
-  ctaText: "Beta-Zugang sichern",
-  stats: "Limitierte Plätze für Beta-Tester verfügbar",
-  successHeading: "Perfekt - du bist dabei!",
-  successMessage: "Du erhältst als eine(r) der Ersten Zugang zu unserer KI-Koch-Innovation.",
-  image: "/email-capture-kitchen.jpg",
+  ctaText: "Jetzt abonnieren",
+  stats: "Keine Sorge - wir melden uns nur, wenn es wirklich losgeht!",
+  successHeading: "Super, du bist dabei!",
+  successMessage: "Wir informieren dich, sobald KochCopilot startet.",
+  image: "/oma-ki.png",
 };
 

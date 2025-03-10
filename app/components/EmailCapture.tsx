@@ -63,7 +63,7 @@ export default function EmailCapture() {
   return (
     <section id="notify" className="mb-16 overflow-hidden rounded-xl shadow-lg">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-[#1A3A3A] to-[#2F4238] text-white py-9 px-8 border-b border-[#1C1C1C]">
+      <div className="bg-gradient-to-r from-[#1A3A3A] to-[#2F4238] text-white py-9 px-8">
         <h2 className="text-3xl font-bold mb-2 text-center tracking-tight text-white">
           {emailCapture.title}
         </h2>
@@ -74,13 +74,15 @@ export default function EmailCapture() {
         <div className="md:flex">
           {/* Left Side - Image */}
           <div className="md:w-1/2 relative hidden md:block">
-            <div className="relative h-72 md:h-full overflow-hidden">
+            <div className="relative min-h-[500px] w-full flex items-center justify-center">
               <Image
                 src={emailCapture.image}
                 alt="Lazy Surf Bag on beach"
                 fill
                 priority
-                className="object-cover"
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={95}
               />
             </div>
           </div>

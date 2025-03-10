@@ -8,7 +8,7 @@ export default function ProductFeatures() {
         {productFeatures.title}
       </h2>
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        <ul className="space-y-4">
+        <ul className="space-y-4 flex flex-col items-center justify-center">
           {productFeatures.features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2">
               <Check
@@ -18,19 +18,21 @@ export default function ProductFeatures() {
             </li>
           ))}
         </ul>
-        <div className="aspect-square relative rounded-lg overflow-hidden shadow-md">
-          <video
-            controls
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src={productFeatures.videoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+        <div className="flex justify-center">
+          <div className="relative w-[280px] h-[580px] rounded-[2rem] overflow-hidden shadow-lg bg-black border-8 border-black">
+            <video
+              controls
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src={productFeatures.videoSrc} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+          </div>
         </div>
       </div>
     </section>
