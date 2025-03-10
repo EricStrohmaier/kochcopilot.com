@@ -8,7 +8,6 @@ import HeroSection from "./components/HeroSection";
 import ProductFeatures from "./components/ProductFeatures";
 import EmailCapture from "./components/EmailCapture";
 import FaqSection from "./components/FaqSection";
-import TestimonialsSection from "./components/TestimonialsSection";
 import FinalCta from "./components/FinalCta";
 import Footer from "./components/Footer";
 
@@ -35,8 +34,6 @@ export default function Home() {
         {/* FAQ Section */}
         <FaqSection />
 
-        {/* Testimonials Section */}
-        <TestimonialsSection />
 
         {/* Final CTA Section */}
         <FinalCta onClickCta={scrollToNotify} />
